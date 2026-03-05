@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow Idle</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Flow Idle</h1>
+    <div class="resource">⚡ <span id="energyValue">0</span></div>
+    <div class="resource">EPS <span id="epsValue">0</span></div>
+  </header>
+
+  <main>
+    <section id="mainMenu" class="screen active panel">
+      <h2>Main Menu</h2>
+      <div class="menu-grid">
+        <button id="startGameBtn">Start Game</button>
+        <button id="continueBtn">Continue</button>
+        <button data-screen="levelScreen">Level Select</button>
+        <button data-screen="upgradesScreen">Upgrades</button>
+        <button data-screen="prestigeScreen">Prestige</button>
+        <button data-screen="statsScreen">Stats</button>
+        <button data-screen="settingsScreen">Settings</button>
+        <button data-screen="creditsScreen">Credits</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen panel">
+      <div class="row space">
+        <h3 id="levelInfo">-</h3>
+        <div>Moves <span id="movesInfo">0</span></div>
+        <div>Time <span id="timerInfo">0</span></div>
+      </div>
+      <div id="gridBoard" class="grid-board"></div>
+      <div class="row">
+        <button id="undoBtn">Undo</button>
+        <button id="restartBtn">Restart</button>
+        <button id="hintBtn">Hint</button>
+        <button data-screen="mainMenu">Menu</button>
+      </div>
+    </section>
+
+    <section id="upgradesScreen" class="screen panel">
+      <h2>Upgrades</h2>
+      <div id="upgradeCards" class="cards"></div>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="prestigeScreen" class="screen panel">
+      <h2>Prestige</h2>
+      <p id="prestigeInfo"></p>
+      <button id="prestigeBtn">Prestige Reset</button>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="levelScreen" class="screen panel">
+      <h2>Level Select</h2>
+      <div id="levelList" class="level-list"></div>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="statsScreen" class="screen panel">
+      <h2>Stats & Achievements</h2>
+      <div id="statsContent"></div>
+      <ul id="achievementList"></ul>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="settingsScreen" class="screen panel">
+      <h2>Settings</h2>
+      <label><input type="checkbox" id="soundToggle" checked /> Sound</label>
+      <label><input type="checkbox" id="colorblindToggle" /> Colorblind Mode</label>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="creditsScreen" class="screen panel">
+      <h2>Credits</h2>
+      <p>Designed and generated as a modular Flow Free + idle puzzle game demo.</p>
+      <button data-screen="mainMenu">Back</button>
+    </section>
+
+    <section id="completeScreen" class="screen panel">
+      <h2>Puzzle Complete!</h2>
+      <p>Reward: <strong id="completeReward">0</strong> energy</p>
+      <p id="completeStars">★★★</p>
+      <div class="row">
+        <button id="nextLevelBtn">Next Level</button>
+        <button id="replayBtn">Replay</button>
+        <button data-screen="mainMenu">Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
